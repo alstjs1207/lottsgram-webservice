@@ -10,5 +10,17 @@ spring:
   devtools:
     livereload:
       enabled: true
-  freemaker:
+    restart:
+      enabled: false
+  freemarker:
     cache: false
+  thymeleaf:
+    cache: false
+  mustache:
+    cache: false
+
+images:
+  load:
+    path: C:\Users\msyu\IdeaProjects\lottsgram-webservice\src\main\resources\static\images
+  save:
+    path: /images

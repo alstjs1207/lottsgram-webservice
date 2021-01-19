@@ -18,7 +18,8 @@ var main = {
         var data = {
             title: $('#title').val(),
             author: $('#author').val(),
-            content: $('#content').val()
+            //content: $('#content').val()
+            content: editor.getData()
         };
 
         $.ajax({
@@ -37,7 +38,8 @@ var main = {
     update : function () {
         var data = {
             title: $('#title').val(),
-            content: $('#content').val()
+            //content: $('#content').val()
+            content: editor.getData()
         };
 
         var id = $('#id').val();

@@ -3,7 +3,7 @@
 <h1>게시글 수정</h1>
 
 <div class="col-md-12">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form>
             <div class="form-group">
                 <label for="title">글 번호</label>
@@ -20,6 +20,18 @@
             <div class="form-group">
                 <label for="content"> 내용 </label>
                 <textarea class="form-control" id="content">{{post.content}}</textarea>
+                <script>
+                    ClassicEditor
+                        .create( document.querySelector( '#content' ) )
+                        .then( newEditor => {
+                            editor = newEditor;
+                        })
+                        .catch( error => {
+                            console.error( error );
+                        } );
+
+
+                </script>
             </div>
         </form>
         <a href="/" role="button" class="btn btn-secondary">취소</a>
