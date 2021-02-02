@@ -4,3 +4,4 @@
 /build/
 /src/main/resources/static/images/
 /out/
+/src/main/resources/application-oauth.yml/

@@ -18,6 +18,8 @@ spring:
     cache: false
   mustache:
     cache: false
+  profiles:
+    include: oauth
 
 images:
   load:
