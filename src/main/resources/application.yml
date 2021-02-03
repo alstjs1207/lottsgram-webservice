@@ -23,6 +23,16 @@ spring:
   session:
     store-type: jdbc
 
+  # Test OAUTH - test를 진행 하려면 application-oauth.yml 설정을 읽지못해 fake 데이터가 필요함.
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: test
+            client-secret: test
+            scope: profile,email
+
 images:
   load:
     path: C:\Users\msyu\IdeaProjects\lottsgram-webservice\src\main\resources\static\images
