@@ -20,6 +20,8 @@ spring:
     cache: false
   profiles:
     include: oauth
+  session:
+    store-type: jdbc
 
 images:
   load:
