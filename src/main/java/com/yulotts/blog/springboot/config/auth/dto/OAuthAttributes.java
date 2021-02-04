@@ -59,7 +59,7 @@ public class OAuthAttributes {
                 .name(name)
                 .email(email)
                 .picture(picture)
-                .role(Role.GUST) //초기 가입시 GUST 권한 설정
+                .role(Role.USER) //초기 가입시 GUST 권한 설정
                 .build();
     }
 }
