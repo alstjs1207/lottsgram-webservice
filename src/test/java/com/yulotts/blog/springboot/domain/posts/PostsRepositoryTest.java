@@ -46,6 +46,23 @@ public class PostsRepositoryTest {
     }
 
     @Test
+    public void 게시글_하나_불러오기() {
+        //given
+        String title = "테스트게시글";
+        String content = "테스트본문";
+        // id가 있으면 update, 없으면 insert
+        Posts post = postsRepository.save(Posts.builder()
+                .title(title)
+                .content(content)
+                .author("msyu1207@gmail.com")
+                .build());
+
+        Posts prs = postsRepository.findById(post.getId()).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id="));
+
+        assertThat(prs.getTitle()).isEqualTo(title);
+    }
+
+    @Test
     public void BaseTimeEntity_등록() {
 
         LocalDateTime now = LocalDateTime.of(2021,1,18,0,0,0,0);

@@ -29,11 +29,13 @@ public class PostsApiController {
 
     @GetMapping("/api/v1/posts/{id}")
     public PostsResponseDto findById(@PathVariable Long id) {
+        System.out.println("조회 id="+id);
         return postsService.findById(id);
     }
 
     @GetMapping("/api/v1/posts/list")
     public List<PostsListResponseDto> findAll() {
+        System.out.println("리스트 조회");
         return postsService.findAllDesc();
     }
 

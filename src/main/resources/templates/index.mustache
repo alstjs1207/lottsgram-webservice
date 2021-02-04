@@ -19,11 +19,13 @@
         {{/userName}}
     </header>
     <div class="col-md-12">
-        <div class="row">
-            <div class="col-md-6">
-                <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+        {{#userName}}
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+                </div>
             </div>
-        </div>
+        {{/userName}}
         <br>
         <!-- 목록 출력 영역 -->
         <table class="table table-horizontal table-bordered">
@@ -39,7 +41,7 @@
             {{#posts}}
             <tr>
                 <td>{{id}}</td>
-                <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+                <td><a href="/posts/{{id}}">{{title}}</a></td>
                 <td>{{author}}</td>
                 <td>{{modifiedDate}}</td>
             </tr>
@@ -47,4 +49,7 @@
             </tbody>
         </table>
      </div>
+
 {{>layout/footer}}
+<!--index.js 추가-->
+<script src="/js/app/index.js"></script>

@@ -131,4 +131,24 @@ public class PostsApiControllerTest {
                 .andDo(print());
     }
 
+    @Test
+    @WithMockUser(roles="USER")
+    public void Posts_하나가조회된다() throws Exception {
+
+        Posts savePosts = postsRepository.save(Posts.builder().title("title").content("content").author("author").build());
+        Long id = savePosts.getId();
+
+        String url = "http://localhost:" + port + "/api/v1/posts/"+savePosts.getId();
+
+        mvc.perform(get(url)
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(""))
+                .andExpect(status().isOk())
+                .andDo(print());
+
+        //PostsResponseDto post = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id="+ id));
+        //assertThat(post.getTitle()).isEqualTo("title");
+
+    }
+
 }

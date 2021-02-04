@@ -3,6 +3,7 @@ package com.yulotts.blog.springboot.web;
 import com.yulotts.blog.springboot.config.auth.LoginUser;
 import com.yulotts.blog.springboot.config.auth.dto.SessionUser;
 import com.yulotts.blog.springboot.service.posts.PostsService;
+import com.yulotts.blog.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +31,12 @@ public class IndexController {
     }
 
     @GetMapping("/posts/save")
-    public String postsSave() {
+    public String postsSave(Model model, @LoginUser SessionUser user) {
+
+        if(user != null) {
+            model.addAttribute("userName",user.getName());
+        }
+
         return "posts-save";
     }
 
@@ -38,5 +44,21 @@ public class IndexController {
     public String postsUpdate(@PathVariable Long id, Model model) {
         model.addAttribute("post",postsService.findById(id));
         return "posts-update";
+    }
+
+    @GetMapping("/posts/{id}")
+    public String getPost(@PathVariable Long id, Model model, @LoginUser SessionUser user) {
+
+        PostsResponseDto entity = postsService.findById(id);
+
+        if(user != null) {
+            if((entity.getAuthor()).equals(user.getName())) {
+                model.addAttribute("userName",user.getName());
+            }
+        }
+
+        model.addAttribute("post", entity);
+
+        return "posts-view";
     }
 }
