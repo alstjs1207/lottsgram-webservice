@@ -1,27 +1,26 @@
 {{>layout/header}}
 
-<h1>게시글 보기</h1>
+<h1 class="animate__animated animate__rubberBand animate__delay-0.5s">로띠그램</h1>
 
 <div class="col-md-12">
     <div class="col-md-12">
         <form>
             <div style="padding-bottom: 31px;">
                 <div class="form-group">
-                    <label for="title">글 번호</label>
-                    <input type="text" class="form-control" id="id" value="{{post.id}}" readonly>
+                    <input type="hidden" class="form-control" id="id" value="{{post.id}}" readonly>
                 </div>
-                <div class="form-group">
+                <div class="post__title animate__animated animate__slideInUp animate__delay-0.5s">
                     <p>
                         {{post.title}}
                     </p>
                 </div>
-                <div class="form-group">
-                    <span>
-                        {{post.author}}
-                    </span>
+                <div class="post__author animate__animated animate__slideInUp animate__delay-0.75s">
+                    {{post.modifiedDate}}
+                    <span class="post__explain__bar"></span>
+                    {{post.author}}
                 </div>
             </div>
-            <div class="form-group">
+            <div class="post__content animate__animated animate__slideInUp animate__delay-1s">
                 <textarea class="form-control" id="content">{{post.content}}</textarea>
                 <script>
                     let editor;

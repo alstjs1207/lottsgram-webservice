@@ -36,12 +36,12 @@ public class FileManageController {
 //                    System.out.println(e.toString());
 //                }
 //            }
-            String filePath = imagesPath + File.separator + filename;
+            String filePath = imagesPath + File.separator + newFileName;
             System.out.println(filePath);
             upload.transferTo(new File(filePath));
             // 응답값 필수
             map.put("uploaded",true);
-            map.put("url",savePath+"/"+filename);
+            map.put("url",savePath+"/"+newFileName);
         }
         catch(Exception e) {
             System.out.println(e.toString());

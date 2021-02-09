@@ -1,7 +1,7 @@
 {{> layout/header}}
 
     <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <p class="h5 my-0 me-md-auto fw-normal" style="margin-right:auto;">로띠그램 서비스 Ver.2</p>
+        <p class="h5 my-0 me-md-auto fw-normal animate__animated animate__slideInUp animate__delay-0.5s" style="margin-right:auto;">로띠그램 서비스 Ver.2</p>
         <nav class="my-2 my-md-0 me-md-3">
             <a class="p-2 text-dark" href="#">Features</a>
             <a class="p-2 text-dark" href="#">Enterprise</a>
@@ -20,34 +20,36 @@
     </header>
     <div class="col-md-12">
         {{#userName}}
-            <div class="row">
+            <div class="row animate__animated animate__slideInUp animate__delay-0.5s">
                 <div class="col-md-6">
                     <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
                 </div>
             </div>
         {{/userName}}
         <br>
-        <!-- 목록 출력 영역 -->
-        <table class="table table-horizontal table-bordered">
-            <thead class="thead-strong">
-            <tr>
-                <th>게시글번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>최종수정일</th>
-            </tr>
-            </thead>
-            <tbody id="tbody">
-            {{#posts}}
-            <tr>
-                <td>{{id}}</td>
-                <td><a href="/posts/{{id}}">{{title}}</a></td>
-                <td>{{author}}</td>
-                <td>{{modifiedDate}}</td>
-            </tr>
-            {{/posts}}
-            </tbody>
-        </table>
+        <div class="animate__animated animate__slideInUp animate__delay-0.5s">
+	        <!-- 목록 출력 영역 -->
+	        <table class="table table-horizontal table-bordered">
+	            <thead class="thead-strong">
+	            <tr>
+	                <th>게시글번호</th>
+	                <th>제목</th>
+	                <th>작성자</th>
+	                <th>최종수정일</th>
+	            </tr>
+	            </thead>
+	            <tbody id="tbody">
+	            {{#posts}}
+	            <tr>
+	                <td>{{id}}</td>
+	                <td><a href="/posts/{{id}}">{{title}}</a></td>
+	                <td>{{author}}</td>
+	                <td>{{modifiedDate}}</td>
+	            </tr>
+	            {{/posts}}
+	            </tbody>
+	        </table>
+        </div>
      </div>
 
 {{>layout/footer}}
