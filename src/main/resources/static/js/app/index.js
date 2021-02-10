@@ -14,6 +14,18 @@ var main = {
         });
     },
     save : function () {
+    	
+    	if(!$('#title').val()) {
+    		alert('제목을 입력해 주세요.');
+    		return 0;
+    	}
+    	
+    	if(!editor.getData()) {
+    		alert('내용을 입력해 주세요.');
+    		return 0;
+    	}
+    	
+    	
         var data = {
             title: $('#title').val(),
             author: $('#author').val(),
