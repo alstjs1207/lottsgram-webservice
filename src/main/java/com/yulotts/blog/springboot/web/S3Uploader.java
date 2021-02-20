@@ -59,7 +59,8 @@ public class S3Uploader implements Uploader {
     private Optional<File> convert(MultipartFile file) throws IOException {
         String newFileName = UUID.randomUUID()+LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
 //        File convertFile = new File(FILE_PATH+file.getOriginalFilename());
-        File convertFile = new File(FILE_PATH+newFileName);
+//        File convertFile = new File(FILE_PATH+newFileName);
+        File convertFile = new File(newFileName);
         if(convertFile.createNewFile()) {
             try (FileOutputStream fos = new FileOutputStream(convertFile)) {
                 fos.write(file.getBytes());
