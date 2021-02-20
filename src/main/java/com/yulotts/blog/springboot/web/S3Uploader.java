@@ -22,7 +22,7 @@ import java.util.UUID;
 @Component
 public class S3Uploader implements Uploader {
 
-    private final static String FILE_PATH = "src/main/resources/static/images/";
+    private final static String FILE_PATH = "src/main/resources/static/";
 
     private final AmazonS3Client client;
 
