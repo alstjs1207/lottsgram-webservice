@@ -32,9 +32,3 @@ spring:
             client-id: test
             client-secret: test
             scope: profile,email
-
-images:
-  load:
-    path: C:\Users\msyu\IdeaProjects\lottsgram-webservice\src\main\resources\static\images
-  save:
-    path: /images
