@@ -32,3 +32,9 @@ spring:
             client-id: test
             client-secret: test
             scope: profile,email
+           
+# Test 를 진행하기 위해 fake 데이터 
+cloud:
+  aws:
+    s3:
+      bucket: test
